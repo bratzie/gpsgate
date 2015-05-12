@@ -1,0 +1,71 @@
+/** 
+ * API for the GpsGate Hackathon web service.
+ *
+ * Notes: 
+ *
+ * - All methods are asynchronous and return s.c. Deferreds (Promises) (using the MochiKit library)
+ * @see http://mochi.github.io/mochikit/doc/html/MochiKit/Async.html#fn-deferred 
+ * Same concept as for example jQuery's Promise. 
+ * Think: jQuery.done() == Deferred.addCallback(). jQuery.fail() == Deferred.addErrback(). jQuery.always() == Deferred.addBoth().
+ *
+ * - the returned data is (pre-evaluated) JSON. See description below.
+ * tips: use http://jsbeautifier.org/ to help readability when debugging
+ *
+ * Note on jQuery: we are using jQuery instead of $ 
+ *
+ */
+ 
+// --- JSON data specification ---
+
+/** 
+ * JSON specification for User object
+ * @see GetUsersInTag(Tagname)
+ */
+var User = {
+	username: string,
+	message: string,
+	position: {
+		lat: double // latitude north-south. degrees, from Equator (-90 -> 90)
+		lng: double // longitude west-east. degrees, from Greenwich (-180 -> 180)
+	}	
+};
+
+// --- methods ---
+
+/**
+ * Get all users within a Tag
+ * @param {string} Tag name
+ */
+GpsGate.Server.Hackathon.GetUsersInTag(strTagname)
+
+/**
+ * Report position for a user
+ * The user will be created if it doesn't exist
+ * @param {string} Username
+ * @param {string} Password
+ * @param {string} Message - A status message
+ * @param {string} Tag name
+ * @param {number} longitude west-east. degrees, from Greenwich (-180 -> 180)
+ * @param {number} latitude north-south. degrees, from Equator (-90 -> 90)
+ */
+GpsGate.Server.Hackathon.ReportPosition(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat)
+
+Extras:
+
+/**
+ * Get the Datastore for a Tag
+ * @param {string} Tag name
+ */
+GpsGate.Server.Hackathon.GetDataStore(strTagname)
+
+/**
+ * Append data to a tag Datastore
+ * @param {string} Tag name
+ * @param {string} Data to be appended
+ */
+GpsGate.Server.Hackathon.AppendDataStore(strTagname, strData)
+
+/**
+ * Clear the datastore of a Tag
+ */
+GpsGate.Server.Hackathon.ClearDataStore(strTagname)
