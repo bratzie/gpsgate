@@ -71,12 +71,7 @@ p {
 	font-weight: 700;
 }
 
-#yolo {
-	display: none;
-	font-weight: 700;
-}
-
-#biz {
+#yolo, #biz {
 	display: none;
 	font-weight: 700;
 }

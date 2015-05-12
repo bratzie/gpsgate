@@ -22,6 +22,7 @@
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 	</head>
 	<body>
+        
 		<div id="container">
 			<div id="content">
 				<span id="blinky">
@@ -31,10 +32,78 @@
 					<span class="hText" id="biz">STUDS</span>
 				</span>
 			</div>
-			<div id="map-canvas"/></div>
+			<input type="text" placeholder="Username" id="usrName" />
+			<input type="text" placeholder="Message" id="msg" />
+			<button onClick="submitLocation(getElementById('usrName').value, getElementById('msg').value)">SUBMIT</button>
+			<div id="map-canvas"/>
 			<div id="labels"></div>
+        </div>
 			
-			
+        <script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
+        <script>
+            goog.require('GpsGate.Server'); 
+            goog.require('jQuery');
+            // jQuery etc...
+        </script>
+        <script>
+            GpsGate.require('GpsGate.Server.Hackathon');
+            // other services    
+        </script>
+        
+       <script type="text/javascript">
+        
+            app = function() {
+                this.username = 'op3';
+                this.password = 'pass';
+            };
+                        
+            app.prototype.getUsersInTag = function(tag) {               
+                return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
+                    function(result) {
+                        console.log(JSON.stringify(result));
+                    },
+                    function(err) {
+                        // An error occured
+                        console.error(err);
+                    }
+                );
+            };
+            
+            app.prototype.reportPosition = function(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat) {
+                return GpsGate.Server.Hackathon.ReportPosition(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat).addCallbacks(  
+                    function(result) {
+                        console.log("Reported location for: " + strUsername);
+                    },
+                    function(err) {
+                        // An error occured
+                        console.error(err);
+                    }
+                );
+            }
+            
+            function start(){
+                var myApp = new app();
+                myApp.getUsersInTag('t3');
+                
+                var map;
+                var markers = [];
+            };
+            
+            function submitLocation(user, msg) {
+                var myApp = new app();
+                navigator.geolocation.getCurrentPosition(reportLocation);
+            
+                console.log(user);
+                console.log(msg);
+                
+                function reportLocation(location) {
+                    myApp.reportPosition(user, 'pass', msg, 't3', location.coords.longitude, location.coords.latitude); 
+                }
+            };
+
+            jQuery(document).ready(start);
+            
+       </script>
 		<script src="js/modernizr.custom.js"></script>
         <script src="js/script.js"></script>
         <script src="js/fadernizer.js"></script>
