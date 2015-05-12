@@ -135,7 +135,7 @@
             console.log(msg);
 
             function reportLocation(location) {
-                myApp.reportPosition(user, 'pass', msg, 't3', location.coords.longitude, location.coords.latitude);
+                myApp.reportPosition(user, 'pass', msg, 'libaneserna', location.coords.longitude, location.coords.latitude);
             }
         };
 
@@ -164,10 +164,11 @@
         app.prototype.plotUsersInTag = function (tag) {
             return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
                 function (result) {
-                    markers = result[0];
+                    markers = result;
+                    console.log(markers);
                     console.log(markers.length);
-
-                    for (i = 0; i < markers.length; i++) {
+                    
+                    for (var i = 0; i < markers.length; i++) {
                         
                         console.log(markers[i]);
                         var markerLatLng = new google.maps.LatLng(markers[i].position.lat, markers[i].position.lng);
@@ -176,7 +177,7 @@
                             map: map,
                             title: markers[i].message
                         });
-                        console.log(marker);
+                        console.log("hej")
                     }
 
                 },
@@ -189,7 +190,8 @@
 
         function plotShit() {
             var myApp = new app();
-            myApp.plotUsersInTag('t3');
+            myApp.plotUsersInTag('libaneserna');
+            
             console.log(cheese);
         }
         jQuery(document).ready(initialize);
