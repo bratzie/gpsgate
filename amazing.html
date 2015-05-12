@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Group 3 Madness</title>
+	<meta name="description" content="Group 3 Mobile Fun Time" />
+	<meta name="keywords" content="swag, yolo" />
+	<meta name="author" content="Group 3" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/icons.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
+	<script>
+		goog.require('GpsGate.Server'); 
+		goog.require('jQuery'); 
+            // jQuery etc...
+        </script>
+        
+        <script>
+        	GpsGate.require('GpsGate.Server.Hackathon');
+            // other services
+        </script>
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+        <!-- Google maps API -->
+        <!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+        <script type="text/javascript">
+            function init() {
+                jQuery('input#go-button').click(function() {
+                    var name = jQuery('input#name-field').val();
+                    var msg = jQuery('input#message-field').val();
+                    alert(name + ' ' + msg);
+                });
+            }
+        </script>
+
+    </head>
+    <body onload="init()">
+    	<div id="container">
+    		<div id="content">
+    			<span id="blinky">
+    				<span class="hText" id="such">SUCH</span>
+    				<span class="hText" id="swag">GPS</span>
+    				<span class="hText" id="yolo">GATE</span>
+    				<span class="hText" id="biz">STUDS</span>
+    			</span>
+    		</div>
+    		<div id="labels"></div>
+
+            <style type="text/css">
+                .user-form {
+                    position: relative;
+                    width: 60%;
+                    margin-top: 50px;
+                    margin: 0 auto;  
+                }
+
+                .user-form input {
+                    width: 100%;
+                    height: 25px;
+                    padding-left: 15px;
+                    margin-bottom: 20px;
+                                        -webkit-border-top-left-radius:20px;
+                    -moz-border-radius-topleft:20px;
+                    border-top-left-radius:20px;
+                    -webkit-border-top-right-radius:20px;
+                    -moz-border-radius-topright:20px;
+                    border-top-right-radius:20px;
+                    -webkit-border-bottom-right-radius:20px;
+                    -moz-border-radius-bottomright:20px;
+                    border-bottom-right-radius:20px;
+                    -webkit-border-bottom-left-radius:20px;
+                    -moz-border-radius-bottomleft:20px;
+                    border-bottom-left-radius:20px;
+                }
+
+
+
+                .presentation-text {
+                    text-align: center;
+                    width: 100%;
+                    color: white;
+                    margin-bottom: 100px;
+                }
+
+                input.amazing-button {
+                    -moz-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+                    -webkit-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+                    box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+                    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
+                    background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+                    background-color:#9dce2c;
+                    -webkit-border-top-left-radius:20px;
+                    -moz-border-radius-topleft:20px;
+                    border-top-left-radius:20px;
+                    -webkit-border-top-right-radius:20px;
+                    -moz-border-radius-topright:20px;
+                    border-top-right-radius:20px;
+                    -webkit-border-bottom-right-radius:20px;
+                    -moz-border-radius-bottomright:20px;
+                    border-bottom-right-radius:20px;
+                    -webkit-border-bottom-left-radius:20px;
+                    -moz-border-radius-bottomleft:20px;
+                    border-bottom-left-radius:20px;
+                    text-indent:0;
+                    border:1px solid #83c41a;
+                    display:block;
+                    color:#ffffff;
+                    font-family:Arial;
+                    margin: 0 auto;
+                    font-size:15px;
+                    font-weight:bold;
+                    font-style:normal;
+                    height:40px;
+                    width:200px;
+                    text-decoration:none;
+                    text-align:center;
+                    text-shadow:1px 1px 0px #689324;
+                }
+                .amazing-button:hover {
+                    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+                    background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+                    background-color:#8cb82b;
+                }.amazing-button:active {
+                    position:relative;
+                    top:1px;
+                }
+
+                .presentation-text {
+                    margin-top: 50px
+                }
+
+                @media (max-width: 640px) {
+                    .user-form input {
+                        width: 90%;
+                    }
+                }
+
+            </style>
+
+            <div class="presentation-text">
+                Hej<br>
+
+                <br>
+
+                Skriv in dina uppgifter eller dö!
+            </div>
+
+            <div class="user-form">
+                <input type="text" id="name-field" placeholder="Enter your name plzz" name="name">
+                <br>
+                <input type="text" id="message-field" placeholder="Enter a message" name="message"><br>
+                <br>
+                <input id="go-button" class="amazing-button" type="submit" value="Go!">
+
+            </div>
+
+
+            <script src="js/modernizr.custom.js"></script>
+            <script src="js/script.js"></script>
+            <script src="js/fadernizer.js"></script>
+        </body>
+        </html>
