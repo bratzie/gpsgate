@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Hackathon 2015</title>
+       <script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
+       <script>
+            goog.require('GpsGate.Server'); 
+            goog.require('jQuery'); 
+            // jQuery etc...
+       </script>
+       
+       <script>
+            GpsGate.require('GpsGate.Server.Hackathon');
+            // other services
+       </script>
+        
+       <script type="text/javascript">
+        
+            app = function() {
+                this.username = 'teama';
+                this.password = '1234';
+            };
+                        
+            app.prototype.getUsersInTag = function(tag) {               
+                return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
+                    function(result) {
+                        // Do something with the result
+                    },
+                    function(err) {
+                        // An error occured
+                        console.error(err);
+                    }
+                );
+            };
+            
+            function start(){
+                var myApp = new app();          
+                myApp.getUsersInTag('TeamA Tag');
+            };
+
+            jQuery(document).ready(start);
+            
+       </script>
+   </head>
+   <body>
+        <div>
+            Some UI stuff here...
+        </div>
+   </body>
+</html>
