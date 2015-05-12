@@ -1,117 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Group 3 Madness</title>
-		<meta name="description" content="Group 3 Mobile Fun Time" />
-		<meta name="keywords" content="swag, yolo" />
-		<meta name="author" content="Group 3" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/icons.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 Madness</title>
+    <meta name="description" content="Group 3 Mobile Fun Time" />
+    <meta name="keywords" content="swag, yolo" />
+    <meta name="author" content="Group 3" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-        <!-- Google maps API -->
-        <!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-	</head>
-	<body>
-        
-		<div id="container">
-			<div id="content">
-				<span id="blinky">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <!-- Google maps API -->
+    <!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="content">
+            <span id="blinky">
 					<span class="hText" id="such">SUCH</span>
-					<span class="hText" id="swag">GPS</span>
-					<span class="hText" id="yolo">GATE</span>
-					<span class="hText" id="biz">STUDS</span>
-				</span>
-			</div>
-			<div class="presentation-text">
-                Enter your stuff... nao. You'll be placed on the map. Yay?
-            </div>
-
-            <div class="user-form">
-                <input type="text" placeholder="Username" id="name-field" name="name"/>
-                <input type="text" placeholder="Message" id="message-field" name="message"/>
-                <button class="amazing-button" id="go-button" onClick="submitLocation(getElementById('name-field').value, getElementById('message-field').value)">SUBMIT</button>
-                <div id="map-canvas"/>
-                <div id="labels"></div>
-            </div>
+            <span class="hText" id="swag">GPS</span>
+            <span class="hText" id="yolo">GATE</span>
+            <span class="hText" id="biz">STUDS</span>
+            </span>
         </div>
-			
-        <script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
-        <script>
-            goog.require('GpsGate.Server'); 
-            goog.require('jQuery');
-            // jQuery etc...
-        </script>
-        <script>
-            GpsGate.require('GpsGate.Server.Hackathon');
-            // other services    
-        </script>
-        
-       <script type="text/javascript">
-        
-            app = function() {
-                this.username = 'op3';
-                this.password = 'pass';
-            };
-                        
-            app.prototype.getUsersInTag = function(tag) {               
-                return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
-                    function(result) {
-                        console.log(JSON.stringify(result));
-                    },
-                    function(err) {
-                        // An error occured
-                        console.error(err);
-                    }
-                );
-            };
-            
-            app.prototype.reportPosition = function(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat) {
-                return GpsGate.Server.Hackathon.ReportPosition(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat).addCallbacks(  
-                    function(result) {
-                        console.log("Reported location for: " + strUsername);
-                    },
-                    function(err) {
-                        // An error occured
-                        console.error(err);
-                    }
-                );
-            }
-            
-            function start(){
-                var myApp = new app();
-                myApp.getUsersInTag('t3');
-                
-                var map;
-                var markers = [];
-            };
-            
-            function submitLocation(user, msg) {
-                var myApp = new app();
-                navigator.geolocation.getCurrentPosition(reportLocation);
-            
-                console.log(user);
-                console.log(msg);
-                
-                function reportLocation(location) {
-                    myApp.reportPosition(user, 'pass', msg, 't3', location.coords.longitude, location.coords.latitude); 
-                }
-            };
+        <div class="presentation-text">
+            Enter your stuff... nao. You'll be placed on the map. Yay?
+        </div>
 
-            jQuery(document).ready(start);
-            
-       </script>
-		<script src="js/modernizr.custom.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/fadernizer.js"></script>
-	</body>
+        <div class="user-form">
+            <input type="text" placeholder="Username" id="name-field" name="name" />
+            <input type="text" placeholder="Message" id="message-field" name="message" />
+            <button class="amazing-button" id="go-button" onClick="submitLocation(getElementById('name-field').value, getElementById('message-field').value)">SUBMIT</button>
+        </div>
+    </div>
+    <div id="map-canvas" /></div>
+
+    <script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
+    <script>
+        goog.require('GpsGate.Server');
+        goog.require('jQuery');
+        // jQuery etc...
+    </script>
+    <script>
+        GpsGate.require('GpsGate.Server.Hackathon');
+        // other services
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript">
+        app = function () {
+            this.username = 'op3';
+            this.password = 'pass';
+        };
+
+        var markers = [];
+
+        app.prototype.getUsersInTag = function (tag) {
+            return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
+                function (result) {
+                    markers = JSON.stringify(result);
+                    console.log(markers);
+                },
+                function (err) {
+                    // An error occured
+                    console.error(err);
+                }
+            );
+        };
+
+        app.prototype.reportPosition = function (strUsername, strPassword, strMessage, strTagName, dblLng, dblLat) {
+            return GpsGate.Server.Hackathon.ReportPosition(strUsername, strPassword, strMessage, strTagName, dblLng, dblLat).addCallbacks(
+                function (result) {
+                    console.log("Reported location for: " + strUsername);
+                },
+                function (err) {
+                    // An error occured
+                    console.error(err);
+                }
+            );
+        }
+
+        function submitLocation(user, msg) {
+            var myApp = new app();
+            navigator.geolocation.getCurrentPosition(reportLocation);
+
+            console.log(user);
+            console.log(msg);
+
+            function reportLocation(location) {
+                myApp.reportPosition(user, 'pass', msg, 't3', location.coords.longitude, location.coords.latitude);
+            }
+        };
+
+        var cheese = true;
+
+        function initialize() {
+            while (cheese) {
+                navigator.geolocation.getCurrentPosition(placeMarkers);
+
+                function placeMarkers(location) {
+                    var myLatLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+                    var mapOptions = {
+                        zoom: 13,
+                        center: myLatLng
+                    }
+
+                    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+                    plotShit();
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+                cheese = false;
+            }
+        }
+
+        app.prototype.plotUsersInTag = function (tag) {
+            return GpsGate.Server.Hackathon.GetUsersInTag(tag).addCallbacks(
+                function (result) {
+                    markers = result[0];
+                    console.log(markers.length);
+
+                    for (i = 0; i < markers.length; i++) {
+                        
+                        console.log(markers[i]);
+                        var markerLatLng = new google.maps.LatLng(markers[i].position.lat, markers[i].position.lng);
+                        var marker = new google.maps.Marker({
+                            position: markerLatLng,
+                            map: map,
+                            title: markers[i].message
+                        });
+                        console.log(marker);
+                    }
+
+                },
+                function (err) {
+                    // An error occured
+                    console.error(err);
+                }
+            );
+        };
+
+        function plotShit() {
+            var myApp = new app();
+            myApp.plotUsersInTag('t3');
+            console.log(cheese);
+        }
+        jQuery(document).ready(initialize);
+    </script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/fadernizer.js"></script>
+</body>
+
 </html>

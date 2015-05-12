@@ -4,84 +4,91 @@ Blue: #00698b
 */
 
 html {
-	height: 100% }
+    height: 100%
+}
 
-body { 
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: #e88f34;
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e88f34;
 }
 
 span {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 #labels {
-	text-align: center;
-	font-size: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
 }
 
-#map-canvas { 
-	height: 500px; 
+#map-canvas {
+    height: 500px;
+    width: 500px;
+    background-color: azure;
+    margin: 20px auto;
+    border: 2px solid azure;
+    border-radius: 50%;
 }
 
 .hText {
-	font-size: 4em;
-	color: #00698b;
+    font-size: 4em;
+    color: #00698b;
 }
 
 p {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 #vingit {
-	margin: 0px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 #users {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 #content {
-	width: 800px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 30px;
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
 }
 
 #subheader {
-	width: 100%;
-	height: 100px;
-	margin: 0px;
+    width: 100%;
+    height: 100px;
+    margin: 0px;
 }
 
 #blinky {
-	width: 400px;
-	margin-right: auto;
-	margin-left: auto;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #such {
     margin-left: 20%;
-	color: #ffffff;
-	font-weight: 100;
+    color: #ffffff;
+    font-weight: 100;
 }
 
 #swag {
-	font-weight: 700;
+    font-weight: 700;
 }
 
-#yolo, #biz {
-	display: none;
-	font-weight: 700;
+#yolo,
+#biz {
+    display: none;
+    font-weight: 700;
 }
 
 .user-form {
     position: relative;
     width: 60%;
     margin-top: 50px;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
 .user-form input {
@@ -89,18 +96,18 @@ p {
     height: 25px;
     padding-left: 15px;
     margin-bottom: 20px;
-                        -webkit-border-top-left-radius:20px;
-    -moz-border-radius-topleft:20px;
-    border-top-left-radius:20px;
-    -webkit-border-top-right-radius:20px;
-    -moz-border-radius-topright:20px;
-    border-top-right-radius:20px;
-    -webkit-border-bottom-right-radius:20px;
-    -moz-border-radius-bottomright:20px;
-    border-bottom-right-radius:20px;
-    -webkit-border-bottom-left-radius:20px;
-    -moz-border-radius-bottomleft:20px;
-    border-bottom-left-radius:20px;
+    -webkit-border-top-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    -moz-border-radius-topright: 20px;
+    border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    -moz-border-radius-bottomright: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .user-form input:focus,
@@ -118,59 +125,71 @@ p {
 }
 
 .amazing-button {
-    -moz-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
-    -webkit-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
-    box-shadow:inset 0px 0px 0px 0px #c1ed9c;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
-    background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
-    background-color:#9dce2c;
-    -webkit-border-top-left-radius:20px;
-    -moz-border-radius-topleft:20px;
-    border-top-left-radius:20px;
-    -webkit-border-top-right-radius:20px;
-    -moz-border-radius-topright:20px;
-    border-top-right-radius:20px;
-    -webkit-border-bottom-right-radius:20px;
-    -moz-border-radius-bottomright:20px;
-    border-bottom-right-radius:20px;
-    -webkit-border-bottom-left-radius:20px;
-    -moz-border-radius-bottomleft:20px;
-    border-bottom-left-radius:20px;
-    text-indent:0;
-    border:1px solid #83c41a;
-    display:block;
-    color:#ffffff;
-    font-family:Arial;
+    -moz-box-shadow: inset 0px 0px 0px 0px #c1ed9c;
+    -webkit-box-shadow: inset 0px 0px 0px 0px #c1ed9c;
+    box-shadow: inset 0px 0px 0px 0px #c1ed9c;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b));
+    background: -moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+    background-color: #9dce2c;
+    -webkit-border-top-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    -moz-border-radius-topright: 20px;
+    border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    -moz-border-radius-bottomright: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-left-radius: 20px;
+    text-indent: 0;
+    border: 1px solid #83c41a;
+    display: block;
+    color: #ffffff;
+    font-family: Arial;
     margin: 0 auto;
-    font-size:15px;
-    font-weight:bold;
-    font-style:normal;
-    height:40px;
-    width:200px;
-    text-decoration:none;
-    text-align:center;
-    text-shadow:1px 1px 0px #689324;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 40px;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #689324;
     outline: none;
 }
+
 .amazing-button:hover {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
-    background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
-    background-color:#8cb82b;
-}.amazing-button:active {
-    position:relative;
-    top:1px;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c));
+    background: -moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+    background-color: #8cb82b;
 }
 
-:focus {outline:none;}
+.amazing-button:active {
+    position: relative;
+    top: 1px;
+}
+
+:focus {
+    outline: none;
+}
 
 .presentation-text {
     margin-top: 20px
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .user-form input {
         width: 90%;
+    }
+    #such {
+        margin-left: 10%;
+    }
+    #map-canvas {
+        border-radius: 0px;
+        width: 100%;
     }
 }
