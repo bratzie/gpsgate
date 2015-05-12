@@ -32,11 +32,17 @@
 					<span class="hText" id="biz">STUDS</span>
 				</span>
 			</div>
-			<input type="text" placeholder="Username" id="usrName" />
-			<input type="text" placeholder="Message" id="msg" />
-			<button onClick="submitLocation(getElementById('usrName').value, getElementById('msg').value)">SUBMIT</button>
-			<div id="map-canvas"/>
-			<div id="labels"></div>
+			<div class="presentation-text">
+                Enter your stuff... nao. You'll be placed on the map. Yay?
+            </div>
+
+            <div class="user-form">
+                <input type="text" placeholder="Username" id="name-field" name="name"/>
+                <input type="text" placeholder="Message" id="message-field" name="message"/>
+                <button class="amazing-button" id="go-button" onClick="submitLocation(getElementById('name-field').value, getElementById('message-field').value)">SUBMIT</button>
+                <div id="map-canvas"/>
+                <div id="labels"></div>
+            </div>
         </div>
 			
         <script type="text/javascript" src="http://studs.gpsgate.com/Services/Core.ashx?xss2=true&deps=true"></script>
